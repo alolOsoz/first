@@ -45,7 +45,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
-        $this->mapAdminRoutes();
+       // $this->mapAdminRoutes();
+        $this->mapColRoutes();
 
         //
     }
@@ -69,6 +70,11 @@ class RouteServiceProvider extends ServiceProvider
         Route::namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
     }
+    protected function mapColRoutes()
+{
+    Route::namespace($this->namespace)
+        ->group(base_path('routes/col.php'));
+}
 
     /**
      * Define the "api" routes for the application.
